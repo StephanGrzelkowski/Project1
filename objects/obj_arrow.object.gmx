@@ -6,7 +6,7 @@
   <depth>0</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
-  <maskName>&lt;undefined&gt;</maskName>
+  <maskName>spr_arrow</maskName>
   <events>
     <event eventtype="0" enumb="0">
       <action>
@@ -51,6 +51,17 @@ speed = 5;
           <argument>
             <kind>1</kind>
             <string>motion_set(move_angle, speed);
+
+// check for collision with enemy 
+enemy_id = instance_place(x,y,obj_enemy)
+if enemy_id != noone 
+    {
+    if instance_exists(enemy_id)
+        {
+        instance_destroy(enemy_id);
+        }
+    instance_destroy(self);
+    }
 </string>
           </argument>
         </arguments>

@@ -7,7 +7,7 @@
   <sounds name="sound"/>
   <sprites name="sprites">
     <sprite>sprites\spr_arrow</sprite>
-    <sprite>sprites\sprite1</sprite>
+    <sprite>sprites\spr_enemy</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -15,11 +15,16 @@
     <script>scripts\scr_get_arrow_direction.gml</script>
   </scripts>
   <objects name="objects">
-    <object>objects\obj_mouse_tracker</object>
-    <object>objects\obj_direction_pointer</object>
-    <object>objects\obj_arrow</object>
-    <object>objects\obj_enemy_spawner</object>
-    <object>objects\obj_enemy</object>
+    <objects name="player">
+      <object>objects\obj_mouse_tracker</object>
+      <object>objects\obj_arrow</object>
+      <object>objects\obj_direction_pointer</object>
+    </objects>
+    <objects name="enemies">
+      <object>objects\obj_enemy_spawner</object>
+      <object>objects\obj_enemy</object>
+    </objects>
+    <object>objects\obj_global_vars</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm0</room>
