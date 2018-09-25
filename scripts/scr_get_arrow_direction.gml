@@ -1,4 +1,4 @@
-//pointer_direction = scr_get_arrow_direction(mouse_first_x, mouse_first_y, mouse_current_x, mouse_current_y)
+///pointer_direction = scr_get_arrow_direction(mouse_first_x, mouse_first_y, mouse_current_x, mouse_current_y)
 // 
 //calculates the direction of the arrow based on the mouse input (mouseClick and current mouse postition and draws the arrow
 // 

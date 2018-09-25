@@ -26,6 +26,9 @@
           <argument>
             <kind>1</kind>
             <string>speed = 2;
+image_xscale = 2; 
+image_yscale = 2; 
+
 </string>
           </argument>
         </arguments>
@@ -49,6 +52,37 @@
           <argument>
             <kind>1</kind>
             <string>move_towards_point(room_width / 2, room_height / 2, speed)
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_arrow">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>obj_camera.shake = obj_camera.shake_strength; 
+if instance_exists(other)
+{
+    with other 
+    {
+        instance_destroy(id);
+    }
+    instance_destroy(id);
+} 
 </string>
           </argument>
         </arguments>
