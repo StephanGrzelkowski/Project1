@@ -52,6 +52,7 @@ image_yscale = 2;
             <kind>1</kind>
             <string>instance_destroy(id);
 
+instance_create(1,1, obj_game_end)
 </string>
           </argument>
         </arguments>

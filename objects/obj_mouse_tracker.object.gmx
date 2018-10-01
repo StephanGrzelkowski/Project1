@@ -26,6 +26,10 @@
           <argument>
             <kind>1</kind>
             <string>bol_arrow_drawing = false;
+windup_start = 20
+windup = windup_start;
+windup_max = 100; 
+windup_increase = 1; 
 </string>
           </argument>
         </arguments>
@@ -48,20 +52,31 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if mouse_check_button_pressed(1) = true {
+            <string>if mouse_check_button_pressed(1) = true 
+{
     mouse_pressed_x = mouse_x;
     mouse_pressed_y = mouse_y; 
     instance_create(0,0,obj_direction_pointer);
 }
-
-if mouse_check_button_released(1) = true {
+if mouse_check_button(1) &amp;&amp; windup &lt; windup_max
+{
+    windup += windup_increase; 
+    show_debug_message("Windup is at: " + string(windup));  
+}
+if mouse_check_button_released(1) = true 
+{
     bol_arrow_drawing = false; 
     arrow_direction = point_direction(mouse_pressed_x, mouse_pressed_y, mouse_x, mouse_y)
     new_arrow_id = instance_create(room_width / 2, room_height / 2, obj_arrow)
-    with (new_arrow_id) {
-    move_angle = other.arrow_direction + 180;
-    image_angle = other.arrow_direction + 180;
+    with (new_arrow_id) 
+    {
+        move_angle = other.arrow_direction + 180;
+        image_angle = move_angle;
+        speed = speed_max * (other.windup / 100)
+        show_debug_message( "speed is at : " + string(speed))
+        show_debug_message( "windup was at: " + string(other.windup))
     } 
+    windup = windup_start;
 }
 
 

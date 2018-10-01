@@ -27,7 +27,8 @@
             <kind>1</kind>
             <string>//initiate movement angle to be set bu the mouse tracker object after creation
 move_angle = 0; 
-speed = 5;
+speed_max = 5;
+speed_min = 0.5;
 image_xscale = 2; 
 image_yscale = 2; 
 
@@ -55,6 +56,15 @@ image_yscale = 2;
             <kind>1</kind>
             <string>motion_set(move_angle, speed);
 
+if speed &gt; 0 
+{
+    speed = lerp(0, speed, 0.99) 
+}
+
+if speed &lt; speed_min
+{
+    instance_destroy();
+}
 </string>
           </argument>
         </arguments>

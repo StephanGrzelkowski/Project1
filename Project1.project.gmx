@@ -29,6 +29,7 @@
     <object>objects\obj_global_vars</object>
     <object>objects\obj_camera</object>
     <object>objects\obj_controller</object>
+    <object>objects\obj_game_end</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm0</room>
