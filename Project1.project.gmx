@@ -8,30 +8,59 @@
   <sprites name="sprites">
     <sprite>sprites\spr_arrow</sprite>
     <sprite>sprites\spr_enemy</sprite>
-    <sprite>sprites\sprite2</sprite>
+    <sprite>sprites\spr_player</sprite>
+    <sprite>sprites\spr_energy</sprite>
+    <sprites name="menu">
+      <sprite>sprites\spr_button</sprite>
+    </sprites>
+    <sprite>sprites\spr_powerup</sprite>
+    <sprite>sprites\spr_vanguard</sprite>
+    <sprite>sprites\spr_arrow_red</sprite>
   </sprites>
-  <backgrounds name="background"/>
+  <backgrounds name="background">
+    <background>background\background0</background>
+  </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
     <script>scripts\scr_get_arrow_direction.gml</script>
+    <script>scripts\scr_particle_energy.gml</script>
+    <script>scripts\scr_menu_option.gml</script>
   </scripts>
+  <fonts name="fonts">
+    <font>fonts\fnt_menu</font>
+  </fonts>
   <objects name="objects">
     <objects name="player">
-      <object>objects\obj_mouse_tracker</object>
       <object>objects\obj_arrow</object>
-      <object>objects\obj_direction_pointer</object>
       <object>objects\obj_player</object>
     </objects>
     <objects name="enemies">
-      <object>objects\obj_enemy_spawner</object>
       <object>objects\obj_enemy</object>
+      <object>objects\obj_vanguard</object>
+      <object>objects\obj_enemy_projectile</object>
     </objects>
-    <object>objects\obj_global_vars</object>
-    <object>objects\obj_camera</object>
-    <object>objects\obj_controller</object>
-    <object>objects\obj_game_end</object>
+    <objects name="particles">
+      <object>objects\par_energy</object>
+    </objects>
+    <objects name="menu">
+      <object>objects\obj_menu_controller</object>
+      <object>objects\obj_button_start</object>
+      <object>objects\obj_button_exit</object>
+    </objects>
+    <objects name="controllers">
+      <object>objects\obj_global_vars</object>
+      <object>objects\obj_camera</object>
+      <object>objects\obj_controller</object>
+      <object>objects\obj_game_end</object>
+      <object>objects\obj_direction_pointer</object>
+      <object>objects\obj_enemy_spawner</object>
+      <object>objects\obj_mouse_tracker</object>
+      <object>objects\obj_power_ups</object>
+    </objects>
+    <object>objects\obj_powerup</object>
   </objects>
   <rooms name="rooms">
+    <room>rooms\rm_menu</room>
     <room>rooms\rm0</room>
   </rooms>
   <help>
