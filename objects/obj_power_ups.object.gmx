@@ -26,6 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>/// Init power up variables
+debug = 0
 globalvar global_powerup_quickwindup;
 global_powerup_quickwindup = false;
 globalvar global_powerup_barrier; 
@@ -135,12 +136,16 @@ if alarm_spawn &gt; 0
 }
 else if alarm_spawn = 0
 {
-    show_debug_message("Spawning a power up")
+    
     random_spawn_distance = irandom(spawn_distance_max - spawn_distance_min) + spawn_distance_min
     random_spawn_direction = irandom(360); 
     spawn_x = room_width / 2 + lengthdir_x(random_spawn_distance, random_spawn_direction)
     spawn_y = room_height / 2 + lengthdir_y(random_spawn_distance, random_spawn_direction)
-    show_debug_message("Spawn x: " + string(spawn_x) + " Spawn y: " + string(spawn_y));
+    if debug
+    {    
+        show_debug_message("Spawning a power up");
+        show_debug_message("Spawn x: " + string(spawn_x) + " Spawn y: " + string(spawn_y));
+    }
     instance_create(spawn_x, spawn_y, obj_powerup)
     alarm_spawn = alarm_spawn_time
 }   

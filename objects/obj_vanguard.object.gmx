@@ -26,6 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>/// Initiate variables 
+debug = 0
 move_speed = 2; 
 shoot_range = 200; 
 shoot_cooldown = 3;
@@ -33,7 +34,8 @@ shoot_timer = shoot_cooldown * room_speed;
 state = 'moving'; 
 image_xscale = 2; 
 image_yscale = 2; 
- 
+
+
 </string>
           </argument>
         </arguments>
@@ -56,10 +58,12 @@ image_yscale = 2;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>show_debug_message(state);
-show_debug_message(string(abs(point_distance(x,y, obj_player.x, obj_player.y &lt;= shoot_range))))
-show_debug_message('Shoot Range is : ' + string(shoot_range))
-
+            <string>if debug
+{
+    show_debug_message(state);
+    show_debug_message(string(abs(point_distance(x,y, obj_player.x, obj_player.y &lt;= shoot_range))))
+    show_debug_message('Shoot Range is : ' + string(shoot_range))
+}
 switch (state) 
 {
     case 'moving':

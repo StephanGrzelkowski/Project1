@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>bol_arrow_drawing = false;
+            <string>debug = 0; 
+bol_arrow_drawing = false;
 windup_start = 20
 windup = windup_start;
 windup_max = 100; 
@@ -61,7 +62,7 @@ windup_increase = 1;
 if mouse_check_button(1) &amp;&amp; windup &lt; windup_max
 {
     windup += windup_increase; 
-    show_debug_message("Windup is at: " + string(windup));  
+    if (debug) show_debug_message("Windup is at: " + string(windup));  
 }
 if mouse_check_button_released(1) = true 
 {
@@ -73,8 +74,11 @@ if mouse_check_button_released(1) = true
         move_angle = other.arrow_direction + 180;
         image_angle = move_angle;
         speed = speed_max * (other.windup / 100)
-        show_debug_message( "speed is at : " + string(speed))
-        show_debug_message( "windup was at: " + string(other.windup))
+        if debug
+        {
+            show_debug_message( "speed is at : " + string(speed))
+            show_debug_message( "windup was at: " + string(other.windup))
+        }
     } 
     windup = windup_start;
 }

@@ -26,6 +26,8 @@
           <argument>
             <kind>1</kind>
             <string>//initiate movement angle to be set bu the mouse tracker object after creation
+debug = 0
+
 move_angle = 0; 
 speed_max = 5;
 speed_min = 0.5;

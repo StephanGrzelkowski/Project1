@@ -25,8 +25,88 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_xscale = 2; 
+            <string>debug = 1
+
+image_xscale = 2; 
 image_yscale = 2; 
+
+// movement 
+accel = 0.5 
+decel = 0.95 
+h_spd = 0
+v_spd = 0
+spd_max = 5 
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (keyboard_check(vk_left) || keyboard_check(ord('A')))
+{
+    if h_spd &gt;= -spd_max  
+    {
+        h_spd -= accel
+        show_debug_message('ADDING right movement')
+    }
+}
+
+if (keyboard_check(vk_right) || keyboard_check(ord('D')))
+{
+    if h_spd &lt;= spd_max
+    {
+        h_spd += accel     
+        show_debug_message('ADDIN left movement')
+    }
+}
+
+if (keyboard_check(vk_up) || keyboard_check(ord('W')))
+{
+    if v_spd &gt;= -spd_max
+    {
+        v_spd -= accel
+    
+        show_debug_message('ADDING up movement')
+    }
+}
+
+if (keyboard_check(vk_down) || keyboard_check(ord('S')))
+{
+    if v_spd &lt;= spd_max
+    {
+        v_spd += accel
+    
+
+        show_debug_message('ADDING down movement')
+    }
+}
+
+if debug
+{
+    show_debug_message('Vertical speed is ' + string(v_spd))
+    show_debug_message('horizontal speed is ' + string(h_spd))
+}
+h_spd *= decel
+v_spd *= decel
+
+x += h_spd  
+y += v_spd 
 
 </string>
           </argument>
