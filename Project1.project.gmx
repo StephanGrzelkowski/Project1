@@ -16,9 +16,15 @@
     <sprite>sprites\spr_powerup</sprite>
     <sprite>sprites\spr_vanguard</sprite>
     <sprite>sprites\spr_arrow_red</sprite>
+    <sprite>sprites\spr_collision</sprite>
+    <sprites name="environment">
+      <sprite>sprites\spr_bush</sprite>
+      <sprite>sprites\spr_grasstile</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
+    <background>background\bg_grass</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -58,6 +64,11 @@
       <object>objects\obj_power_ups</object>
     </objects>
     <object>objects\obj_powerup</object>
+    <object>objects\obj_collision</object>
+    <objects name="environment">
+      <object>objects\obj_bush</object>
+      <object>objects\obj_grasstile</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_menu</room>
